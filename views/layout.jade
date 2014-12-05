@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= "HLS Streamer JS - " + title
+    link(rel='apple-touch-icon', href='/images/apple-touch-icon.png')
+    link(rel='stylesheet', href='/themes/css/jqtouch.min.css')
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    //- Hack to keep all links in same browser when in iOS app mode.
+
+  body
+
+    div#jqt.supports3d.touchscroll.portrait
+
+      div#about
+        center
+          h1= title
+        a.grayButton.goback(href="#") Close
+
+      != body
+
+      script(src='/socket.io/socket.io.js')
+      != js('application')
+
+
