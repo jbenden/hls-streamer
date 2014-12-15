@@ -1,16 +1,18 @@
-div#home.current
-  div.toolbar
-    if q
-      a.back(href="#") Back
-    h1 HLS Streamer
-    a.button(href="#about") About HLS Streamer
-  div.scroll
-    ul.rounded
-      each video in videos
-        li.arrow
-          - var link = video.id
-          a(href="?q=" + link target="_webapp").webapp.loading
-            = video.name
-            if !video.directory
-              small.counter
-                = video.size
+extends layout
+
+block content
+  div#home.current
+    div.toolbar
+      if q
+        a.back(href="#") Back
+      h1 HLS Streamer
+    div.scroll
+      ul.rounded
+        each video in videos
+          li.arrow
+            - var link = video.id
+            a(href="?q=" + link target="_webapp").webapp.loading
+              = video.name
+              if !video.directory
+                small.counter
+                  = video.size

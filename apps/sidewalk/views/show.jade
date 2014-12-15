@@ -1,15 +1,17 @@
-div#home.current
-  div.toolbar
-    if q
-      a.back(href="#") Back
-    h1 HLS Streamer
-    a.button(href="#about") About HLS Streamer
-  div.scroll
-    center
-      = video.name
-    video(src=video.sha + ".m3u8" width="100%" height="100%" autoplay="autoplay" controls="controls" data-sha="#{video.sha}" data-file="#{video.file}" data-wshost="ws://localhost:3000/")
-    script(type="text/javascript").
-      wshost = "ws://localhost:3000/";
-      sha256 = "#{video.sha}";
-      file   = "#{video.path}/#{video.name}";
-      pos    = "0";
+extends layout
+
+block content
+  div#home.current
+    div.toolbar
+      if q
+        a.back(href="#") Back
+      h1 HLS Streamer
+    div.scroll
+      center
+        = video.name
+      video(src=video.sha + ".m3u8" width="100%" height="100%" autoplay="autoplay" controls="controls" data-sha="#{video.sha}" data-file="#{video.file}" data-wshost="ws://localhost:3000/")
+      script(type="text/javascript").
+        wshost = "ws://localhost:3000/";
+        sha256 = "#{video.sha}";
+        file   = "#{video.path}/#{video.name}";
+        pos    = "0";

@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang="en")
   head
     title= "HLS Streamer JS - " + title
     link(rel='apple-touch-icon', href='/images/apple-touch-icon.png')
@@ -11,12 +11,7 @@ html
 
     div#jqt.supports3d.touchscroll.portrait
 
-      div#about
-        center
-          h1= title
-        a.grayButton.goback(href="#") Close
-
-      != body
+      block content
 
       script(src='/socket.io/socket.io.js')
       != js('application')
