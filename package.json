@@ -32,6 +32,6 @@
   "scripts": {
     "test": "./bin/test",
     "watch": "./bin/test --growl --watch",
-    "devserver": "./node_modules/node-dev/node-dev server.js"
+    "devserver": "./node_modules/node-dev/bin/node-dev server.js"
   }
 }

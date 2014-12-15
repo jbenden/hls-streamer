@@ -2,8 +2,14 @@ Video = require '../../models/video'
 fs    = require 'fs'
 fp    = require 'filepath'
 Transcoder = require '../../models/transcoder'
+paths = require '../../config'
+p     = require 'path'
 
-default_paths = [new Video(path:'/Volumes', name:'Storage', directory:true), new Video(path:'/Volumes', name:'Desktop', directory:true)]
+default_paths = []
+for path in paths
+    item_path = p.dirname(path)
+    item_name = p.basename(path)
+    default_paths.push(new Video(path: item_path, name: item_name, directory: true))
 
 routes = (app) ->
   app.get '/', (req, res) ->

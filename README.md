@@ -23,9 +23,11 @@ The available directories are configured inside of `apps/sidewalk/routes.coffee`
 6. Feel free to modify this line to suite your multimedia collection. This should be
 abstracted out to a configuration file, it just hasn't happened yet.
 
-To-Do
------
+FFMpeg Installation
+-------------------
 
-* Abstract available paths to a configuration file.
-* Include a line to build an optimized FFMpeg from Homebrew.
+Using [Homebrew](http://brew.sh) for installation of FFMpeg is easy. Simply copy
+and paste the following line in to *Terminal*.
+
+    # brew install ffmpeg --HEAD --with-x264 --with-faac --with-lame --with-xvid
 

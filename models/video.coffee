@@ -41,7 +41,6 @@ class Video
       st = fs.statSync(path + "/" + file)
       s = st.size.toString().commafy()
       video = new Video({name: file, path: path, directory: st.isDirectory(), size: s, play_count: 0, paused_at: 0, total_views: 0})
-      console.log(video)
       videos.push video
     callback null, videos
     @
