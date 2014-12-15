@@ -28,4 +28,5 @@ describe "Routes", ->
                     throw err
                 expect(res.charset).to.contain('utf-8')
                 expect(res.text).has.contain('toolbar')
+                expect(res.text).has.contain('?q=/Volumes/Storage')
 
