@@ -17,5 +17,5 @@ else
   MOCHA_ARGS="test/*.js test/*.coffee test/apps/*.coffee test/models/*.coffee"
 fi
 
-./node_modules/mocha/bin/mocha $MOCHA_ARGS
+./node_modules/mocha/bin/mocha --compilers coffee:coffee-script $MOCHA_ARGS
 
